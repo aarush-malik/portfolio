@@ -95,7 +95,7 @@
     .btn-link {
       color: white;
       text-decoration: none;
-      width: 100%;
+      flex-grow: 1;
       text-align: left;
     }
     .btn-link:hover {
@@ -131,7 +131,6 @@
     }
     .toggle-icon {
       font-size: 1.5em;
-      margin-left: 10px;
     }
   </style>
   <title>Education Section</title>
@@ -149,11 +148,11 @@
     <div class="accordion" id="educationAccordion">
       <div class="card">
         <div class="card-header" id="headingOne">
-          <h5 class="mb-0">
+          <h5 class="mb-0 d-flex justify-content-between align-items-center">
             <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
               Santa Clara University
-              <span class="toggle-icon">+</span>
             </button>
+            <span class="toggle-icon">+</span>
           </h5>
         </div>
         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-bs-parent="#educationAccordion">
@@ -189,11 +188,11 @@
 
       <div class="card">
         <div class="card-header" id="headingTwo">
-          <h5 class="mb-0">
+          <h5 class="mb-0 d-flex justify-content-between align-items-center">
             <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
               Milpitas High School
-              <span class="toggle-icon">+</span>
             </button>
+            <span class="toggle-icon">+</span>
           </h5>
         </div>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#educationAccordion">
@@ -212,7 +211,7 @@
 <script>
   document.querySelectorAll('.btn-link').forEach(button => {
     button.addEventListener('click', function () {
-      const icon = this.querySelector('.toggle-icon');
+      const icon = this.parentElement.querySelector('.toggle-icon');
       icon.textContent = icon.textContent === '+' ? '−' : '+';
     });
   });

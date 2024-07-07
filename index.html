@@ -83,28 +83,41 @@
     .card-header {
       background-color: #0056b3; /* Use a softer blue */
       color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
     .btn-link {
       color: white;
       text-decoration: none;
+      width: 100%;
+      text-align: left;
     }
     .btn-link:hover {
       color: #d1ecf1;
     }
-    .bi-chevron-right {
-      color: #0056b3; /* Match arrow color with the header blue */
+    .accordion-button::after {
+      content: '\203A'; /* Unicode character for right arrow */
+      font-size: 1.2em;
+      color: white;
+      transform: rotate(90deg);
+    }
+    .accordion-button.collapsed::after {
+      transform: rotate(0deg);
     }
     ul {
       list-style-type: none;
       padding-left: 0;
     }
+    ul li {
+      position: relative;
+      padding-left: 20px;
+    }
     ul li::before {
-      content: "\2023"; /* Bullet point character */
+      content: "\279C"; /* Unicode character for arrow */
+      position: absolute;
+      left: 0;
       color: #0056b3;
-      font-weight: bold;
-      display: inline-block;
-      width: 1em;
-      margin-left: -1em;
     }
   </style>
   <title>Education Section</title>

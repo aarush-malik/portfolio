@@ -127,8 +127,12 @@
       font-weight: normal; /* Ensure bullet points are not bold */
     }
     #about {
-  font-family: 'Raleway', sans-serif;
-}
+      font-family: 'Raleway', sans-serif;
+    }
+    .toggle-icon {
+      font-size: 1.5em;
+      margin-left: 10px;
+    }
   </style>
   <title>Education Section</title>
 </head>
@@ -148,6 +152,7 @@
           <h5 class="mb-0">
             <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
               Santa Clara University
+              <span class="toggle-icon">+</span>
             </button>
           </h5>
         </div>
@@ -157,9 +162,7 @@
             <p class="fst-italic">Santa Clara, CA</p>
             <ul>
               <li><strong>Minor:</strong> Religious Studies</li>
-              
               <li><strong>Expected Graduation:</strong> June 2027</li>
-              
               <li><strong>Relevant Coursework:</strong>
                 <ul>
                   <li>Object-Oriented Programming</li>
@@ -170,7 +173,6 @@
                   <li>Digital Media Arts (Adobe Creative Cloud)</li>
                 </ul>
               </li>
-              
               <li><strong>Planned Coursework:</strong>
                 <ul>
                   <li>Advanced Programming</li>
@@ -190,6 +192,7 @@
           <h5 class="mb-0">
             <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
               Milpitas High School
+              <span class="toggle-icon">+</span>
             </button>
           </h5>
         </div>
@@ -206,6 +209,14 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"></script>
+<script>
+  document.querySelectorAll('.btn-link').forEach(button => {
+    button.addEventListener('click', function () {
+      const icon = this.querySelector('.toggle-icon');
+      icon.textContent = icon.textContent === '+' ? '−' : '+';
+    });
+  });
+</script>
 </body>
 </html>
 

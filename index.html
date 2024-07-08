@@ -52,13 +52,7 @@
       position: relative;
       padding-left: 20px;
     }
-    #about .container ul li::before {
-      content: "\203A"; /* Unicode character for sideways caret arrow */
-      position: absolute;
-      left: 0;
-      color: #007bff;
-      font-weight: normal; /* Ensure bullet points are not bold */
-    }
+    #about .container ul li::before,
     #resume .container ul li::before {
       content: "\203A"; /* Unicode character for sideways caret arrow */
       position: absolute;
@@ -88,37 +82,32 @@
     <nav id="navbar" class="navbar nav-menu">
       <ul>
         <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-        <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
+        <li><a href="#aboutMe" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
         <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Experience</span></a></li>
         <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
-        <!-- <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li> -->
         <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
       </ul>
     </nav><!-- .nav-menu -->
 
   </header><!-- End Header -->
 
-    <!-- ======= Hero Section ======= -->
-<section id="hero" class="d-flex flex-column justify-content-center">
-  <div class="container" data-aos="zoom-in" data-aos-delay="100">
-    <h1>Aarush Malik</h1>
-    <p style="font-family: 'Raleway', sans-serif; font-weight: 500;">I'm <span class="typed" data-typed-items="a Student, an Engineer, looking for internships"></span></p>
-    <div class="social-links">
-      <!-- <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a> -->
-      <a href="https://www.linkedin.com/in/aarushmalik" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-      <a href="https://github.com/aarush-malik" class="github"><i class="bx bxl-github"></i></a>
-      <a href="mailto:aimalik@scu.edu" class="email"><i class="bx bx-envelope"></i></a>
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex flex-column justify-content-center">
+    <div class="container" data-aos="zoom-in" data-aos-delay="100">
+      <h1>Aarush Malik</h1>
+      <p style="font-family: 'Raleway', sans-serif; font-weight: 500;">I'm <span class="typed" data-typed-items="a Student, an Engineer, looking for internships"></span></p>
+      <div class="social-links">
+        <!-- <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a> -->
+        <a href="https://www.linkedin.com/in/aarushmalik" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://github.com/aarush-malik" class="github"><i class="bx bxl-github"></i></a>
+        <a href="mailto:aimalik@scu.edu" class="email"><i class="bx bx-envelope"></i></a>
+      </div>
     </div>
-  </div>
-</section><!-- End Hero -->
-
+  </section><!-- End Hero -->
 
   <main id="main">
 
-  </section><!-- End Hero -->
-
-<!-- ======= About Section (Education) ======= -->
-  <!-- ======= Facts Section ======= -->
+    <!-- ======= About Me Section ======= -->
     <section id="aboutMe" class="aboutMe">
       <div class="container" data-aos="fade-up">
         <div class="section-title">
@@ -126,7 +115,7 @@
           <p>Hello! I'm Aarush, a sophomore at Santa Clara University pursuing a double major in Computer Science and Mathematics. I am passionate about leveraging technology to address real-world challenges and make a positive impact. With a strong foundation in both theoretical and practical aspects of computer science, I am constantly seeking opportunities to apply my knowledge and skills. Welcome to my portfolio!</p>
         </div>
       </div>
-    </section><!-- End About Me Section -->  
+    </section><!-- End About Me Section -->
 
     <!-- ======= Facts Section ======= -->
     <section id="facts" class="facts">
@@ -175,86 +164,86 @@
       </div>
     </section><!-- End Facts Section -->
 
-    
-  <section id="about" class="about">
-  <div class="container" data-aos="fade-up">
-    <div class="section-title">
-      <h2>Education</h2>
-    </div>
-
-    <div class="accordion" id="educationAccordion">
-      <div class="card">
-        <div class="card-header" id="headingOne">
-          <h5 class="mb-0 d-flex justify-content-between align-items-center">
-            <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              Santa Clara University
-            </button>
-            <span class="toggle-icon" id="iconOne">−</span>
-          </h5>
+    <!-- ======= Education Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Education</h2>
         </div>
-        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne">
-          <div class="card-body">
-            <h6>B.S. Computer Science, B.S. Mathematics</h6>
-            <p class="fst-italic">Sep. 2023 - Jun. 2027</p>
-            <ul>
-              <li><strong>GPA:</strong> 3.76 (magna cum laude)</li>
-              <li><strong>Minor:</strong> Religious Studies</li>
-              <li><strong>Relevant Coursework:</strong>
+
+        <div class="accordion" id="educationAccordion">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h5 class="mb-0 d-flex justify-content-between align-items-center">
+                <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Santa Clara University
+                </button>
+                <span class="toggle-icon" id="iconOne">−</span>
+              </h5>
+            </div>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne">
+              <div class="card-body">
+                <h6>B.S. Computer Science, B.S. Mathematics</h6>
+                <p class="fst-italic">Sep. 2023 - Jun. 2027</p>
                 <ul>
-                  <li>CSCI 10: Introduction to Computer Science (Python)</li>
-                  <li>CSCI 60: Object-Oriented Programming (C++)</li>
-                  <li>CSCI 61 Data Structures (C++)</li>
-                  <li>ELEN 21: Logic Design (Verilog)</li>
-                  <li>MATH 11-14: Calculus I-IV</li>
-                  <li>DIMA 1: Digital Media Arts (Adobe Creative Cloud)</li>
+                  <li><strong>GPA:</strong> 3.76 (magna cum laude)</li>
+                  <li><strong>Minor:</strong> Religious Studies</li>
+                  <li><strong>Relevant Coursework:</strong>
+                    <ul>
+                      <li>CSCI 10: Introduction to Computing (Python)</li>
+                      <li>CSCI 60: Object-Oriented Programming (C++)</li>
+                      <li>CSCI 61 Data Structures (C++)</li>
+                      <li>ELEN 21: Logic Design (Verilog)</li>
+                      <li>MATH 11-14: Calculus I-IV</li>
+                      <li>DIMA 1: Digital Media Arts (Adobe Creative Cloud)</li>
+                    </ul>
+                  </li>
+                  <li><strong>Planned Coursework:</strong>
+                    <ul>
+                      <li>CSCI 62: Advanced Programming (C++)</li>
+                      <li>CSCI 163: Algorithms (C++)</li>
+                      <li>MATH 51: Discrete Math</li>
+                      <li>MATH 53: Linear Algebra</li>
+                      <li>MATH 122: Probability & Statistics (Calculus-Integrated)</li>
+                    </ul>
+                  </li>
                 </ul>
-              </li>
-              <li><strong>Planned Coursework:</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h5 class="mb-0 d-flex justify-content-between align-items-center">
+                <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Milpitas High School
+                </button>
+                <span class="toggle-icon" id="iconTwo">+</span>
+              </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo">
+              <div class="card-body">
+                <h6>High School Diploma</h6>
+                <p class="fst-italic">Aug. 2020 - Jun. 2023 <strong>(graduated one year early)</strong></p>
                 <ul>
-                  <li>CSCI 62: Advanced Programming (C++)</li>
-                  <li>CSCI 163: Algorithms (C++)</li>
-                  <li>MATH 51: Discrete Math</li>
-                  <li>MATH 53: Linear Algebra</li>
-                  <li>MATH 122: Probability & Statistics (Calculus-Integrated)</li>
+                  <li><strong>GPA:</strong> 4.25 (summa cum laude)</li>
+                  <li><strong>Relevant Coursework:</strong>
+                    <ul>
+                      <li>AP Calculus</li>
+                      <li>AP Physics</li>
+                      <li>Honors Chemistry</li>
+                      <li>Advanced English Composition</li>
+                      <li>Principles of Macroeconomics</li>
+                    </ul>
+                  </li>
                 </ul>
-              </li>
-            </ul>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="card">
-        <div class="card-header" id="headingTwo">
-          <h5 class="mb-0 d-flex justify-content-between align-items-center">
-            <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              Milpitas High School
-            </button>
-            <span class="toggle-icon" id="iconTwo">+</span>
-          </h5>
-        </div>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo">
-          <div class="card-body">
-            <h6>High School Diploma</h6>
-            <p class="fst-italic">Aug. 2020 - Jun. 2023 <strong>(graduated one year early)</strong></p>
-            <ul>
-              <li><strong>GPA:</strong> 4.25 (summa cum laude)</li>
-              <li><strong>Relevant Coursework:</strong>
-                <ul>
-                  <li>AP Calculus</li>
-                  <li>AP Physics</li>
-                  <li>Honors Chemistry</li>
-                  <li>Advanced English Composition</li>
-                  <li>Principles of Macroeconomics</li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
       </div>
-    </div>
-
-  </div>
-</section><!-- End Education Section -->
+    </section><!-- End Education Section -->
 
     <!-- ======= Skills Section ======= -->
     <section id="skills" class="skills section-bg">
@@ -336,92 +325,87 @@
     </section><!-- End Skills Section -->
 
     <!-- ======= Resume Section ======= -->
-<section id="resume" class="resume">
+    <section id="resume" class="resume">
+      <div class="container" data-aos="fade-up">
 
-  <style>
-  /* Add this new rule to ensure bullet points are shown correctly */
-  .resume-item ul {
-    list-style-type: disc;
-    margin-left: 20px;
-  }
-  </style>
-  
-  <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Experience</h2>
+        </div>
 
-    <div class="section-title">
-      <h2>Experience</h2>
-    </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <h3 class="resume-title">Professional Experience</h3>
+            <div class="resume-item">
+              <h4>Artificial Intelligence Intern (Summer 2024)</h4>
+              <h5>Jun. 2024 - Present</h5>
+              <p><em>SecoMind AI, San Jose, CA</em></p>
+              <ul>
+                <li>Developed a command-line Python script using Mistral APIs within a Flask application, validating measurement strings with 95% accuracy.</li>
+                <li>Set up the development environment, integrated Mistral, and designed API endpoints, resulting in a 30% reduction in validation time.</li>
+                <li>Conducted extensive research on measurement units, built and tested validation logic, and created comprehensive documentation.</li>
+                <li>Enhanced API efficiency by implementing error handling and logging, reducing error rates by 40%.</li>
+              </ul>
+            </div>
+            <div class="resume-item">
+              <h4>Computer Science Teaching Assistant (Summer 2024)</h4>
+              <h5>May 2024 - Present</h5>
+              <p><em>Girls Who Code, New York, NY</em></p>
+              <ul>
+                <li>Created an engaging and accessible classroom environment for over 60 students by managing lesson delivery, logistical tasks, and virtual classroom setup.</li>
+                <li>Utilized learning tools like Replit and GitHub to troubleshoot issues, address misconceptions, and assist with debugging projects in Python, HTML, and p5.js.</li>
+              </ul>
+            </div>
+            <div class="resume-item">
+              <h4>Student Assistant for the Office of Research</h4>
+              <h5>Nov. 2023 - Present</h5>
+              <p><em>Santa Clara University, Santa Clara, CA</em></p>
+              <ul>
+                <li>Provided support to the pre-award specialists for Sponsored Projects, aiding faculty in securing external funding, and enhancing communication within the Office of Research.</li>
+                <li>Executed effective email campaigns and social media promotions for events and resources, including creating and maintaining web pages.</li>
+                <li>Implemented process improvements to enhance efficiency and productivity in data management tasks.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <h3 class="resume-title"></h3>
+            <div class="resume-item">
+              <h4>Community Facilitator (Resident Assistant)</h4>
+              <h5>Jun. 2024 - Present</h5>
+              <p><em>Santa Clara University, Santa Clara, CA</em></p>
+              <ul>
+                <li>Fostered a supportive and inclusive living environment for students, promoting personal and academic growth.</li>
+                <li>Organized and facilitated community-building activities and events.</li>
+                <li>Provided mentorship and guidance to residents, addressing their concerns and connecting them with campus resources.</li>
+              </ul>
+            </div>
+            <div class="resume-item">
+              <h4>Student Advisory Board Member</h4>
+              <h5>May 2021 - Mar. 2023</h5>
+              <p><em>Comet, San Jose, CA</em></p>
+              <ul>
+                <li>Contributed to product development by providing critical feedback and thoughtful recommendations.</li>
+                <li>Analyzed user interface (UI) and experience (UX) and developed new design opportunities.</li>
+                <li>Managed 350+ interns and members of the student leadership team per year, supporting them through sharing information, raising concerns and risks, and providing input, feedback, and brainstorming solutions.</li>
+                <li>Implemented social media campaigns across different platforms, collectively increasing following and engagement by an average of 25,000 views per month on LinkedIn, TikTok, and Instagram.</li>
+              </ul>
+            </div>
+            <div class="resume-item">
+              <h4>Mathematics &amp; English Instructor</h4>
+              <h5>Jul. 2022 - Apr. 2023</h5>
+              <p><em>Kumon Learning Center, Fremont, CA</em></p>
+              <ul>
+                <li>Conducted comprehensive assessments of each student’s abilities, identifying specific areas for improvement and tailoring lesson plans accordingly.</li>
+                <li>Collaborated with a team of instructors to implement innovative teaching strategies that increased student engagement and enthusiasm for math.</li>
+                <li>Delivered personalized, one-on-one instruction to over 50 students.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
-    <div class="row">
-      <div class="col-lg-6">
-        <h3 class="resume-title">Professional Experience</h3>
-        <div class="resume-item">
-          <h4>Artificial Intelligence Intern (Summer 2024)</h4>
-          <h5>Jun. 2024 - Present</h5>
-          <p><em>SecoMind AI, San Jose, CA</em></p>
-          <ul>
-            <li>Developed a command-line Python script using Mistral APIs within a Flask application, validating measurement strings with 95% accuracy.</li>
-            <li>Set up the development environment, integrated Mistral, and designed API endpoints, resulting in a 30% reduction in validation time.</li>
-            <li>Conducted extensive research on measurement units, built and tested validation logic, and created comprehensive documentation.</li>
-            <li>Enhanced API efficiency by implementing error handling and logging, reducing error rates by 40%.</li>
-          </ul>
-        </div>
-        <div class="resume-item">
-          <h4>Computer Science Teaching Assistant (Summer 2024)</h4>
-          <h5>May 2024 - Present</h5>
-          <p><em>Girls Who Code, New York, NY</em></p>
-          <ul>
-            <li>Created an engaging and accessible classroom environment for over 60 students by managing lesson delivery, logistical tasks, and virtual classroom setup.</li>
-            <li>Utilized learning tools like Replit and GitHub to troubleshoot issues, address misconceptions, and assist with debugging projects in Python, HTML, and p5.js.</li>
-          </ul>
-        </div>
-        <div class="resume-item">
-          <h4>Student Assistant for the Office of Research</h4>
-          <h5>Nov. 2023 - Present</h5>
-          <p><em>Santa Clara University, Santa Clara, CA</em></p>
-          <ul>
-            <li>Provided support to the pre-award specialists for Sponsored Projects, aiding faculty in securing external funding, and enhancing communication within the Office of Research.</li>
-            <li>Executed effective email campaigns and social media promotions for events and resources, including creating and maintaining web pages.</li>
-            <li>Implemented process improvements to enhance efficiency and productivity in data management tasks.</li>
-          </ul>
-        </div>
       </div>
-      <div class="col-lg-6">
-        <h3 class="resume-title"></h3>
-        <div class="resume-item">
-          <h4>Community Facilitator (Resident Assistant)</h4>
-          <h5>Jun. 2024 - Present</h5>
-          <p><em>Santa Clara University, Santa Clara, CA</em></p>
-          <ul>
-            <li></li>
-          </ul>
-        </div>
-        <div class="resume-item">
-          <h4>Student Advisory Board Member</h4>
-          <h5>May 2021 - Mar. 2023</h5>
-          <p><em>Comet, San Jose, CA</em></p>
-          <ul>
-            <li>Contributed to product development by providing critical feedback and thoughtful recommendations.</li>
-            <li>Analyzed user interface (UI) and experience (UX) and developed new design opportunities.</li>
-            <li>Managed 350+ interns and members of the student leadership team per year, supporting them through sharing information, raising concerns and risks, and providing input, feedback, and brainstorming solutions.</li>
-            <li>Implemented social media campaigns across different platforms, collectively increasing following and engagement by an average of 25,000 views per month on LinkedIn, TikTok, and Instagram.</li>
-          </ul>
-        </div>
-        <div class="resume-item">
-          <h4>Mathematics &amp; English Instructor</h4>
-          <h5>Jul. 2022 - Apr. 2023</h5>
-          <p><em>Kumon Learning Center, Fremont, CA</em></p>
-          <ul>
-            <li>Conducted comprehensive assessments of each student’s abilities, identifying specific areas for improvement and tailoring lesson plans accordingly.</li>
-            <li>Collaborated with a team of instructors to implement innovative teaching strategies that increased student engagement and enthusiasm for math.</li>
-            <li>Delivered personalized, one-on-one instruction to over 50 students.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
+    </section><!-- End Resume Section -->
 
-  </div>
-</section><!-- End Resume Section -->
+  </main><!-- End #main -->
 
     <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio section-bg">
@@ -841,6 +825,16 @@
   <script src="assets/vendor/typed.js/typed.umd.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>

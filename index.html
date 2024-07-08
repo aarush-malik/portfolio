@@ -147,7 +147,7 @@
             <span class="toggle-icon" id="iconOne">−</span>
           </h5>
         </div>
-        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-bs-parent="#educationAccordion">
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne">
           <div class="card-body">
             <h6>B.S. Computer Science, B.S. Mathematics</h6>
             <p class="fst-italic">Sep. 2023 - Jun. 2027</p>
@@ -188,7 +188,7 @@
             <span class="toggle-icon" id="iconTwo">+</span>
           </h5>
         </div>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#educationAccordion">
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo">
           <div class="card-body">
             <h6>High School Diploma</h6>
             <p class="fst-italic">Aug. 2020 - Jun. 2023</p>
@@ -215,8 +215,7 @@
 <script>
   document.querySelectorAll('.btn-link').forEach(button => {
     button.addEventListener('click', function () {
-      const iconId = this.parentElement.querySelector('.toggle-icon').id;
-      const icon = document.getElementById(iconId);
+      const icon = this.parentElement.querySelector('.toggle-icon');
       icon.textContent = icon.textContent === '+' ? '−' : '+';
     });
   });

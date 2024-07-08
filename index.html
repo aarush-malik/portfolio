@@ -821,15 +821,22 @@
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"></script>
-<script>
-  document.querySelectorAll('.btn-link').forEach(button => {
-    button.addEventListener('click', function () {
-      const icon = this.parentElement.querySelector('.toggle-icon');
-      icon.textContent = icon.textContent === '+' ? '−' : '+';
+
+  <script>
+  document.querySelectorAll('.accordion').forEach(accordion => {
+    accordion.addEventListener('shown.bs.collapse', function (event) {
+      const icon = event.target.parentElement.querySelector('.toggle-icon');
+      icon.textContent = '−';
+    });
+
+    accordion.addEventListener('hidden.bs.collapse', function (event) {
+      const icon = event.target.parentElement.querySelector('.toggle-icon');
+      icon.textContent = '+';
     });
   });
 </script>
 
+  
 </body>
 
 </html>

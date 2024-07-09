@@ -750,7 +750,7 @@
           <div class="phone">
             <i class="bi bi-phone"></i>
             <h4>Call:</h4>
-            <p>+1 (408) 872 2635</p>
+            <p id="phone-number" style="cursor: pointer; color: blue; text-decoration: underline;">Click to view</p>
           </div>
         </div>
       </div>
@@ -783,10 +783,9 @@
       <h3>Aarush Malik</h3>
       <p>Computer Science & Math | Santa Clara University</p>
       <div class="social-links">
-        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://www.linkedin.com/in/aarushmalik" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://github.com/aarush-malik" class="github"><i class="bx bxl-github"></i></a>
+        <a href="mailto:aimalik@scu.edu" class="email"><i class="bx bx-envelope"></i></a>
       </div>
     </div>
   </footer><!-- End Footer -->
@@ -804,6 +803,13 @@
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script>
+  document.getElementById('phone-number').addEventListener('click', function() {
+    this.textContent = '+1 (408) 872 2635';
+  });
+</script>
+
 </body>
 </html>
 

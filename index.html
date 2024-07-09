@@ -92,18 +92,36 @@
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center">
-    <div class="container" data-aos="zoom-in" data-aos-delay="100">
-      <h1>Aarush Malik</h1>
-      <p style="font-family: 'Raleway', sans-serif; font-weight: 500;">I'm <span class="typed" data-typed-items="a Student, an Engineer, looking for internships"></span></p>
-      <div class="social-links">
-        <!-- <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a> -->
-        <a href="https://www.linkedin.com/in/aarushmalik" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-        <a href="https://github.com/aarush-malik" class="github"><i class="bx bxl-github"></i></a>
-        <a href="mailto:aimalik@scu.edu" class="email"><i class="bx bx-envelope"></i></a>
-      </div>
+<section id="hero" class="d-flex flex-column justify-content-center">
+  <div class="container" data-aos="zoom-in" data-aos-delay="100">
+    <h1>Aarush Malik</h1>
+    <p style="font-family: 'Raleway', sans-serif; font-weight: 500;">
+      I'm <span class="typed" data-typed-items="a Student, an Engineer, looking for internships"></span>
+    </p>
+    <div class="social-links">
+      <!-- <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a> -->
+      <a href="https://www.linkedin.com/in/aarushmalik" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      <a href="https://github.com/aarush-malik" class="github"><i class="bx bxl-github"></i></a>
+      <a href="mailto:aimalik@scu.edu" class="email"><i class="bx bx-envelope"></i></a>
     </div>
-  </section><!-- End Hero -->
+  </div>
+</section><!-- End Hero -->
+
+<!-- Include Typed.js library -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var options = {
+      strings: ["a Student", "an Engineer", "looking for internships"],
+      typeSpeed: 50,
+      backSpeed: 50,
+      loop: true
+    };
+
+    var typed = new Typed(".typed", options);
+  });
+</script>
 
   <main id="main">
 
@@ -112,7 +130,7 @@
       <div class="container" data-aos="fade-up">
         <div class="section-title">
           <h2>About</h2>
-          <p>Hello! I'm Aarush, a sophomore at Santa Clara University pursuing a double major in Computer Science and Mathematics. I am passionate about leveraging technology to address real-world challenges and make a positive impact. With a strong foundation in both theoretical and practical aspects of computer science, I am constantly seeking opportunities to apply my knowledge and skills. Welcome to my portfolio!</p>
+          <p>Hello! I'm Aarush, a sophomore at Santa Clara University pursuing a double major in Computer Science and Mathematics. I am passionate about leveraging technology to address real-world challenges and making a positive impact. With a strong foundation in both theoretical and practical aspects of computer science, I am constantly seeking opportunities to apply and advance my knowledge and skills. Welcome to my portfolio!</p>
         </div>
       </div>
     </section><!-- End About Me Section -->

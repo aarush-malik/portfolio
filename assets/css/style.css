@@ -575,6 +575,12 @@ section {
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
+.portfolio-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .portfolio .portfolio-item {
   margin-bottom: 30px;
 }

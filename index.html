@@ -162,6 +162,37 @@
     #hero h1 { font-size: 2.4rem; }
     #hero p { font-size: 1.1rem; }
   }
+
+  .edu-toggle {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.edu-toggle:focus {
+  outline: none;
+}
+
+.edu-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.14);
+  border: 1px solid rgba(255,255,255,0.20);
+  font-size: 1.25rem;
+  line-height: 1;
+}
 </style>
 <style>
   #hero h1 {
@@ -280,11 +311,12 @@
     <div class="accordion" id="educationAccordion">
       <div class="card">
         <div class="card-header" id="headingOne">
-          <h5 class="mb-0">
-            <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              Santa Clara University
-            </button>
-          </h5>
+          <button class="edu-toggle" type="button"
+            data-bs-toggle="collapse" data-bs-target="#collapseOne"
+            aria-expanded="true" aria-controls="collapseOne">
+            <span>Santa Clara University</span>
+            <span class="edu-icon">−</span>
+          </button>
         </div>
         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-bs-parent="#educationAccordion">
           <div class="card-body">
@@ -322,11 +354,12 @@
       </div>
       <div class="card">
         <div class="card-header" id="headingTwo">
-          <h5 class="mb-0">
-            <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              Milpitas High School
-            </button>
-          </h5>
+          <button class="edu-toggle collapsed" type="button"
+            data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+            aria-expanded="false" aria-controls="collapseTwo">
+            <span>Milpitas High School</span>
+            <span class="edu-icon">+</span>
+          </button>
         </div>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#educationAccordion">
           <div class="card-body">
@@ -935,6 +968,24 @@
   <script src="assets/vendor/typed.js/typed.umd.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script>
+    document.querySelectorAll('#educationAccordion .collapse').forEach(collapseEl => {
+      collapseEl.addEventListener('shown.bs.collapse', () => {
+        const btn = collapseEl.closest('.card').querySelector('.edu-toggle');
+        const icon = btn.querySelector('.edu-icon');
+        icon.textContent = '−';
+        btn.classList.remove('collapsed');
+      });
+  
+      collapseEl.addEventListener('hidden.bs.collapse', () => {
+        const btn = collapseEl.closest('.card').querySelector('.edu-toggle');
+        const icon = btn.querySelector('.edu-icon');
+        icon.textContent = '+';
+        btn.classList.add('collapsed');
+      });
+    });
+  </script>
+  
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
@@ -947,6 +998,7 @@
 
 </body>
 </html>
+
 
 
 

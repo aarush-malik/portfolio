@@ -22,235 +22,300 @@
   <link href="assets/css/style.css" rel="stylesheet">
 
   <style>
-  :root {
-    --brand: rgba(44,97,177,1);
-    --brandSoft: rgba(44,97,177,0.12);
-    --mintSoft: rgba(0,204,153,0.10);
-    --grid: rgba(0,0,0,0.02);
 
-    --cardBg: rgba(255,255,255,0.82);
-    --cardBorder: rgba(44,97,177,0.10);
-    --shadow: 0 18px 50px rgba(0,0,0,0.10);
+body {
+  position: relative;
+  background: #ffffff;
+  margin: 0;
+  padding: 0;
+}
 
-    --radius: 18px;
-  }
+/* Unified gradient + grid background across entire site */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: 
+    radial-gradient(1200px 800px at 15% 20%, rgba(44,97,177,0.18), transparent 60%),
+    radial-gradient(900px 600px at 85% 80%, rgba(0,204,153,0.12), transparent 55%),
+    linear-gradient(180deg, rgba(255,255,255,0.0), rgba(255,255,255,0.45)),
+    repeating-linear-gradient(
+      0deg,
+      rgba(0,0,0,0.02),
+      rgba(0,0,0,0.02) 1px,
+      transparent 1px,
+      transparent 28px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(0,0,0,0.02),
+      rgba(0,0,0,0.02) 1px,
+      transparent 1px,
+      transparent 28px
+    );
+}
 
-  /* ---------- Global background: gradient + subtle grid (site-wide) ---------- */
-  body {
-    position: relative;
-    background: #fff;
-  }
+section {
+  padding: 70px 0;
+}
 
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-    background:
-      radial-gradient(1200px 800px at 15% 20%, rgba(44,97,177,0.18), transparent 60%),
-      radial-gradient(900px 600px at 85% 80%, rgba(0,204,153,0.12), transparent 55%),
-      linear-gradient(180deg, rgba(255,255,255,0.0), rgba(255,255,255,0.45)),
-      repeating-linear-gradient(
-        0deg,
-        var(--grid),
-        var(--grid) 1px,
-        transparent 1px,
-        transparent 28px
-      ),
-      repeating-linear-gradient(
-        90deg,
-        var(--grid),
-        var(--grid) 1px,
-        transparent 1px,
-        transparent 28px
-      );
-  }
+section .container {
+  background: rgba(255, 255, 255, 0.80);
+  border: 1px solid rgba(44, 97, 177, 0.10);
+  border-radius: 18px;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.10);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 34px 28px;
+}
 
-  /* ---------- Section spacing ---------- */
-  section { padding: 70px 0; }
-  .section-bg { background: transparent !important; }
+.section-bg {
+  background: transparent !important;
+}
+    
+#hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
 
-  /* ---------- “Whiteboard card” containers (every section) ---------- */
-  section .container {
-    background: var(--cardBg);
-    border: 1px solid var(--cardBorder);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    padding: 34px 28px;
-  }
+/* Remove separate hero backgrounds - use global one */
+#hero .container {
+  background: none;
+  border: none;
+  box-shadow: none;
+  backdrop-filter: none;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+}
 
-  /* Hero container should NOT be carded */
-  #hero .container {
-    background: none;
-    border: none;
-    box-shadow: none;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    padding: 0;
-  }
+/* Hero card with glassmorphism */
+.hero-card {
+  max-width: 760px;
+  padding: 28px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.80);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(44, 97, 177, 0.12);
+  box-shadow: 0 18px 50px rgba(0,0,0,0.10);
+}
 
-  /* ---------- Nav list reset ---------- */
-  .navbar ul { list-style: none; padding: 0; margin: 0; }
-  .navbar ul li { list-style: none; }
+.hero-card-inner {
+  animation: floatSlow 6s ease-in-out infinite;
+}
 
-  /* ---------- Education accordion styling ---------- */
-  .card-header {
-    background-color: var(--brand);
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
 
-  .btn-link {
-    color: #fff;
-    text-decoration: none;
-    width: 100%;
-    text-align: left;
-  }
-  .btn-link:hover { color: #d1ecf1; }
+/* Hero typography */
+#hero h1 {
+  letter-spacing: -0.6px;
+  margin-bottom: 8px;
+  font-size: 4.5rem;
+  line-height: 1.1;
+  font-weight: 700;
+}
 
-  /* Your custom list chevrons in About/Resume */
-  ul { list-style-type: none; padding-left: 0; }
-  ul li { position: relative; padding-left: 20px; }
+#hero p {
+  margin-bottom: 18px;
+  font-size: 1.6rem;
+  opacity: 0.95;
+}
 
-  #about .container ul li::before,
-  #resume .container ul li::before {
-    content: "\203A";
-    position: absolute;
-    left: 0;
-    color: var(--brand);
-    font-weight: normal;
-  }
+#hero .typed {
+  font-weight: 400;
+}
 
-  /* Education toggle (clickable row) */
-  .edu-toggle {
-    width: 100%;
-    border: 0;
-    background: transparent;
-    color: inherit;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.75rem 1rem;
-    font: inherit;
-    cursor: pointer;
-  }
-  .edu-toggle:focus { outline: none; }
+/* Hero CTAs */
+.hero-cta {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+  margin-bottom: 12px;
+}
 
-  .edu-icon {
-    width: 30px;
-    height: 30px;
-    border-radius: 8px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255,255,255,0.14);
-    border: 1px solid rgba(255,255,255,0.20);
-    font-size: 1rem;
-    line-height: 1;
-  }
+.btn-hero {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: 600;
+  border: 1px solid rgba(44, 97, 177, 0.18);
+  background: rgba(44, 97, 177, 0.08);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+  text-decoration: none;
+  color: inherit;
+}
 
-  /* ---------- Hero polish ---------- */
-  #hero {
-    position: relative;
-    overflow: hidden;
-    min-height: 100vh;
-  }
+.btn-hero:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.10);
+  background: rgba(44, 97, 177, 0.12);
+}
 
-  /* optional hero glow blob (kept subtle) */
-  #hero::after {
-    content: "";
-    position: absolute;
-    width: 520px;
-    height: 520px;
-    left: -160px;
-    top: 15%;
-    background: radial-gradient(circle at 30% 30%, rgba(44,97,177,0.22), rgba(44,97,177,0.0) 60%);
-    filter: blur(10px);
-    z-index: 0;
-  }
+.btn-hero.primary {
+  background: rgba(44, 97, 177, 0.92);
+  color: #fff;
+  border-color: rgba(44, 97, 177, 0.92);
+}
 
-  #hero .container { position: relative; z-index: 1; }
+.btn-hero.primary:hover {
+  background: rgba(44, 97, 177, 1);
+}
 
+/* Social links */
+#hero .social-links a {
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(44, 97, 177, 0.14);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+#hero .social-links a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 18px rgba(0,0,0,0.10);
+}
+
+.section-title h2 {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.section-title h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  width: 58%;
+  height: 3px;
+  background: rgba(44,97,177,0.85);
+  border-radius: 999px;
+}
+
+.section-title p {
+  max-width: 900px;
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar ul li {
+  list-style: none;
+}
+
+.card-header {
+  background-color: #2c61b1;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-link {
+  color: #fff;
+  text-decoration: none;
+  width: 100%;
+  text-align: left;
+}
+
+.btn-link:hover {
+  color: #d1ecf1;
+}
+
+.accordion-button::after {
+  content: "\203A";
+  font-size: 1.2em;
+  color: #fff;
+  transform: rotate(90deg);
+}
+
+.accordion-button.collapsed::after {
+  transform: rotate(0deg);
+}
+
+/* Education toggle button */
+.edu-toggle {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  font: inherit;
+  cursor: pointer;
+}
+
+.edu-toggle:focus {
+  outline: none;
+}
+
+.edu-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.14);
+  border: 1px solid rgba(255,255,255,0.20);
+  font-size: 1rem;
+  line-height: 1;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+ul li {
+  position: relative;
+  padding-left: 20px;
+}
+
+#about .container ul li::before,
+#resume .container ul li::before {
+  content: "\203A";
+  position: absolute;
+  left: 0;
+  color: #2c61b1;
+  font-weight: normal;
+}
+
+@media (max-width: 768px) {
   .hero-card {
-    max-width: 760px;
-    padding: 28px;
-    border-radius: var(--radius);
-    background: rgba(255,255,255,0.72);
-    border: 1px solid var(--brandSoft);
-    box-shadow: var(--shadow);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    padding: 22px;
+    border-radius: 16px;
   }
-
+  
   #hero h1 {
-    letter-spacing: -0.6px;
-    margin-bottom: 8px;
-    font-size: 4.5rem;
-    line-height: 1.1;
-    font-weight: 700;
+    font-size: 3rem;
   }
-
+  
   #hero p {
-    margin-bottom: 18px;
-    font-size: 1.6rem;
-    opacity: 0.95;
+    font-size: 1.25rem;
   }
-
-  #hero .typed { font-weight: 400; }
-
-  #hero .social-links a {
-    width: 42px;
-    height: 42px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 12px;
-    background: rgba(255,255,255,0.70);
-    border: 1px solid rgba(44,97,177,0.14);
-    transition: transform 0.18s ease, box-shadow 0.18s ease;
-  }
-  #hero .social-links a:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 18px rgba(0,0,0,0.10);
-  }
-
-  @keyframes floatSlow {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
-  }
-
-  .hero-card-inner { animation: floatSlow 6s ease-in-out infinite; }
-
-  /* ---------- Section title styling ---------- */
-  .section-title h2 {
-    position: relative;
-    display: inline-block;
-    padding-bottom: 10px;
-  }
-  .section-title h2::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 2px;
-    width: 58%;
-    height: 3px;
-    background: rgba(44,97,177,0.85);
-    border-radius: 999px;
-  }
-  .section-title p { max-width: 900px; }
-
-  /* ---------- Mobile sizing ---------- */
-  @media (max-width: 768px) {
-    .hero-card { padding: 22px; border-radius: 16px; }
-    #hero h1 { font-size: 3rem; }
-    #hero p { font-size: 1.25rem; }
-  }
+}
 </style>
 
 </head>
@@ -1037,6 +1102,7 @@
 
 </body>
 </html>
+
 
 
 

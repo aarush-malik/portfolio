@@ -1,10 +1,3 @@
-/**
-* Template Name: MyResume
-* Updated: Jul 27 2023 with Bootstrap v5.3.1
-* Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 (function() {
   "use strict";
 
@@ -141,8 +134,8 @@
    */
   const typed = select('.typed')
   if (typed) {
-    let typed_strings = typed.getAttribute('data-typed-items')
-    typed_strings = typed_strings.split(',')
+    let typed_strings = typed.getAttribute('data-typed-items');
+    typed_strings = typed_strings.split('|').map(s => s.trim());
     new Typed('.typed', {
       strings: typed_strings,
       loop: true,
@@ -266,5 +259,6 @@
    * Initiate Pure Counter 
    */
   new PureCounter();
+
 
 })()

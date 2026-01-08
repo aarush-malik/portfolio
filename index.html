@@ -247,49 +247,6 @@
     }
   }
 </style>
-<style>
-  /* Dark code-themed hero backdrop */
-  #hero {
-    background-color: #0d1117;          /* dark background */
-    color: #dcdcdc;                     /* light text */
-  }
-  #hero::before,
-  #hero::after {
-    display: none;                      /* hide radial gradients */
-  }
-
-  /* Glass card tweaks for dark mode */
-  .hero-card {
-    background: rgba(13, 17, 23, 0.85); /* semi-transparent dark card */
-    border: 1px solid rgba(0, 255, 70, 0.15);
-    color: inherit;
-  }
-
-  /* Code overlay container */
-  .hero-code {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    overflow: hidden;
-  }
-
-  /* Code lines styling + scroll animation */
-  .hero-code pre {
-    font-family: 'Fira Code', 'Source Code Pro', monospace;
-    font-size: clamp(14px, 2vw, 20px);
-    color: rgba(0, 255, 70, 0.12);      /* soft green */
-    line-height: 1.5;
-    white-space: pre;
-    word-break: break-word;
-    animation: scrollCode 30s linear infinite;
-  }
-
-  @keyframes scrollCode {
-    from { transform: translateY(0%); }
-    to   { transform: translateY(-50%); }
-  }
-</style>
 
 </head>
 <body>
@@ -312,26 +269,6 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-center">
     <div class="container" data-aos="zoom-in" data-aos-delay="100">
-      <div class="hero-code">
-        <pre>
-  // A simple greeting function
-  function greet(name) {
-    return `Hello, ${name}!`;
-  }
-  
-  // Languages I love
-  const languages = ["Python","C++","JavaScript"];
-  languages.forEach(lang => {
-    console.log(greet(lang));
-  });
-  
-  // Life rule
-  if (coffee.isEmpty()) {
-    refill();
-  }
-        </pre>
-      </div>
-      
       <div class="hero-card">
         <div class="hero-card-inner">
           <h1>Aarush I. Malik</h1>
@@ -1095,6 +1032,7 @@
 
 </body>
 </html>
+
 
 
 

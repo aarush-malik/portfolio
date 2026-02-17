@@ -1,17 +1,58 @@
-/**
-* Template Name: MyResume
-* Updated: Jul 27 2023 with Bootstrap v5.3.1
-* Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
-/*--------------------------------------------------------------
-# General
---------------------------------------------------------------*/
 body {
+  position: relative;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
   font-family: "Open Sans", sans-serif;
   color: #272829;
+}
+
+/* Unified gradient + grid background across entire site */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: 
+    radial-gradient(1200px 800px at 15% 20%, rgba(44,97,177,0.18), transparent 60%),
+    radial-gradient(900px 600px at 85% 80%, rgba(0,204,153,0.12), transparent 55%),
+    linear-gradient(180deg, rgba(255,255,255,0.0), rgba(255,255,255,0.45)),
+    repeating-linear-gradient(
+      0deg,
+      rgba(0,0,0,0.02),
+      rgba(0,0,0,0.02) 1px,
+      transparent 1px,
+      transparent 28px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(0,0,0,0.02),
+      rgba(0,0,0,0.02) 1px,
+      transparent 1px,
+      transparent 28px
+    );
+}
+
+section {
+  padding: 70px 0;
+  position: relative;
+  z-index: 1;
+}
+
+section .container {
+  background: rgba(255, 255, 255, 0.80);
+  border: 1px solid rgba(44, 97, 177, 0.10);
+  border-radius: 18px;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.10);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 34px 28px;
+}
+
+.section-bg {
+  background: transparent !important;
 }
 
 a {
@@ -139,6 +180,8 @@ h6 {
 @media (min-width: 991px) {
   #main {
     margin-left: 100px;
+    position: relative;
+    z-index: 1;
   }
 }
 
@@ -287,7 +330,7 @@ h6 {
 
 #hero:before {
   content: "";
-  background: rgba(255, 255, 255, 0.8);
+  background: transparent;
   position: absolute;
   bottom: 0;
   top: 0;
@@ -396,6 +439,45 @@ section {
 
 .section-title p {
   margin-bottom: 0;
+}
+
+/* Ensure About section text is centered regardless of other layout rules */
+.aboutMe .section-title {
+  text-align: center !important;
+}
+
+.aboutMe .section-title p {
+  margin: 0 auto !important;
+  text-align: center !important;
+  max-width: 900px;
+}
+
+/* Stronger layout rules for #aboutMe to override layout shifts */
+#aboutMe .container {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+#aboutMe .section-title {
+  max-width: 900px !important;
+  margin: 0 auto !important;
+}
+
+/* Make the section-title a centered column and constrain paragraph width */
+.aboutMe .section-title {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+.aboutMe .section-title p {
+  max-width: 720px !important;
+  width: auto !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+  font-size: 15px !important;
+  line-height: 1.6 !important;
 }
 
 /*--------------------------------------------------------------

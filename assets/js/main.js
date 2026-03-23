@@ -262,6 +262,21 @@
   new PureCounter();
 
   /**
+   * Scroll progress bar
+   */
+  const scrollProgress = select('#scroll-progress');
+  if (scrollProgress) {
+    const updateScrollProgress = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      scrollProgress.style.width = pct + '%';
+    };
+    window.addEventListener('scroll', updateScrollProgress, { passive: true });
+    updateScrollProgress();
+  }
+
+  /**
    * Dark mode toggle
    */
   const darkModeToggle = select('#dark-mode-toggle');

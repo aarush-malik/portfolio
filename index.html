@@ -23,6 +23,7 @@
 
   <style>
     
+/* ===== HERO ===== */
 #hero {
   position: relative;
   overflow: hidden;
@@ -31,74 +32,176 @@
   align-items: center;
 }
 
-/* Remove separate hero backgrounds - use global one */
+/* Subtle grid texture */
+#hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Floating gradient orbs */
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(110px);
+  pointer-events: none;
+  z-index: 0;
+}
+.hero-orb-1 {
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(79,70,229,0.55) 0%, transparent 70%);
+  top: -250px; right: -120px;
+  animation: orbDrift 24s ease-in-out infinite;
+}
+.hero-orb-2 {
+  width: 520px; height: 520px;
+  background: radial-gradient(circle, rgba(6,182,212,0.45) 0%, transparent 70%);
+  bottom: -160px; left: -80px;
+  animation: orbDrift 30s ease-in-out infinite reverse;
+  animation-delay: -10s;
+}
+.hero-orb-3 {
+  width: 380px; height: 380px;
+  background: radial-gradient(circle, rgba(139,92,246,0.42) 0%, transparent 70%);
+  top: 42%; left: 42%;
+  animation: orbDrift 20s ease-in-out infinite;
+  animation-delay: -6s;
+}
+@keyframes orbDrift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25%  { transform: translate(35px, -55px) scale(1.07); }
+  50%  { transform: translate(-25px, 35px) scale(0.93); }
+  75%  { transform: translate(45px, 25px) scale(1.04); }
+}
+
+/* Hero container reset */
 #hero .container {
-  background: none;
-  border: none;
-  box-shadow: none;
-  backdrop-filter: none;
-  padding: 0;
-  position: relative;
-  z-index: 1;
+  background: none; border: none; box-shadow: none;
+  backdrop-filter: none; padding: 0;
+  position: relative; z-index: 2;
 }
 
-/* Hero card with glassmorphism */
-.hero-card {
-  max-width: 760px;
-  padding: 28px;
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.80);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(44, 97, 177, 0.12);
-  box-shadow: 0 18px 50px rgba(0,0,0,0.10);
+/* Hero content */
+.hero-content { max-width: 820px; }
+
+/* "Hey, I'm" greeting */
+.hero-greeting {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #a78bfa;
+  opacity: 0;
+  animation: heroFadeUp 0.7s ease 0.25s forwards;
+  margin-bottom: 0.4rem;
+  display: block;
+}
+body:not(.dark-mode) .hero-greeting { color: #4f46e5; }
+
+/* Name */
+#hero h1.hero-name {
+  font-size: clamp(3.2rem, 8vw, 6.2rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -2px;
+  margin: 0.1em 0 0.35em;
+  background: linear-gradient(130deg, #60a5fa 0%, #a78bfa 45%, #34d399 100%);
+  background-size: 250% 250%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0;
+  animation: heroFadeUp 0.8s ease 0.5s forwards, shimmer 7s ease-in-out 1.3s infinite;
+}
+@keyframes shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50%       { background-position: 100% 50%; }
 }
 
-.hero-card-inner {
-  animation: floatSlow 6s ease-in-out infinite;
+/* Typed line */
+#hero p.hero-typed-line {
+  font-size: clamp(1.15rem, 2.4vw, 1.6rem);
+  margin-bottom: 2.2rem;
+  opacity: 0;
+  animation: heroFadeUp 0.8s ease 0.9s forwards;
 }
-
-@keyframes floatSlow {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-/* Hero typography */
-#hero h1 {
-  letter-spacing: -0.6px;
-  margin-bottom: 8px;
-  font-size: 4.5rem;
-  line-height: 1.1;
-  font-weight: 700;
-}
-
-#hero p {
-  margin-bottom: 18px;
-  font-size: 1.6rem;
-  opacity: 0.95;
-}
+.dark-mode #hero p.hero-typed-line { color: rgba(226,232,240,0.82); }
+body:not(.dark-mode) #hero p.hero-typed-line { color: #334155; }
 
 #hero .typed {
-  font-weight: 400;
+  font-weight: 700;
+  color: #60a5fa;
 }
+body:not(.dark-mode) #hero .typed { color: #4f46e5; }
 
-/* Hero CTAs */
 /* Social links */
-#hero .social-links a {
-  width: 42px;
-  height: 42px;
+.hero-socials {
+  display: flex;
+  gap: 14px;
+  opacity: 0;
+  animation: heroFadeUp 0.8s ease 1.2s forwards;
+}
+.hero-socials a {
+  width: 50px; height: 50px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.7);
-  border: 1px solid rgba(44, 97, 177, 0.14);
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  border-radius: 14px;
+  font-size: 1.3rem;
+  transition: transform 0.22s cubic-bezier(.34,1.56,.64,1), box-shadow 0.22s ease;
+  text-decoration: none;
+}
+.dark-mode .hero-socials a {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.13);
+  color: #e2e8f0;
+}
+body:not(.dark-mode) .hero-socials a {
+  background: rgba(79,70,229,0.07);
+  border: 1px solid rgba(79,70,229,0.18);
+  color: #4f46e5;
+}
+.hero-socials a:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 14px 32px rgba(79,70,229,0.35);
 }
 
-#hero .social-links a:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 18px rgba(0,0,0,0.10);
+/* Scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 34px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  opacity: 0;
+  animation: heroFadeUp 0.8s ease 1.6s forwards;
+  z-index: 2;
+}
+.dark-mode .scroll-indicator { color: rgba(148,163,184,0.65); }
+body:not(.dark-mode) .scroll-indicator { color: rgba(71,85,105,0.65); }
+.scroll-indicator i { animation: bounce 2.2s ease-in-out infinite; }
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(9px); }
+}
+
+/* Shared entrance animation */
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 .section-title h2 {
@@ -214,18 +317,8 @@ ul li {
 }
 
 @media (max-width: 768px) {
-  .hero-card {
-    padding: 22px;
-    border-radius: 16px;
-  }
-
-  #hero h1 {
-    font-size: 3rem;
-  }
-
-  #hero p {
-    font-size: 1.25rem;
-  }
+  #hero h1.hero-name { letter-spacing: -1px; }
+  .hero-socials a { width: 44px; height: 44px; }
 }
 
 </style>
@@ -252,29 +345,18 @@ ul li {
   </header><!-- End Header -->
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-center">
-    <div class="container" data-aos="zoom-in" data-aos-delay="100">
-      <div class="hero-card">
-        <div class="hero-card-inner">
-          <h1 class="hero-name">Aarush I. Malik</h1>
-          <p>I'm <span class="typed" data-typed-items="a Computer Science Student | an Incoming AI &amp; Data Engineering Summer Analyst at Deloitte | an ex-Data Science Intern at Collins Aerospace | a Student Pilot"></span></p>
-          <div class="hero-tags">
-            <span class="hero-tag">Python</span>
-            <span class="hero-tag">AI / ML</span>
-            <span class="hero-tag">C++</span>
-            <span class="hero-tag">AWS</span>
-            <span class="hero-tag">Data Science</span>
-            <span class="hero-tag">Student Pilot</span>
-          </div>
-          <div class="hero-cta">
-            <a href="#resume" class="btn-hero primary scrollto"><i class="bx bx-briefcase"></i> Experience</a>
-            <a href="#portfolio" class="btn-hero scrollto"><i class="bx bx-code-alt"></i> Projects</a>
-            <a href="#contact" class="btn-hero scrollto"><i class="bx bx-envelope"></i> Contact</a>
-          </div>
-          <div class="social-links">
-            <a href="https://www.linkedin.com/in/aarushmalik" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-            <a href="https://github.com/aarush-malik" class="github"><i class="bx bxl-github"></i></a>
-            <a href="mailto:aimalik@scu.edu" class="email"><i class="bx bx-envelope"></i></a>
-          </div>
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="hero-orb hero-orb-3"></div>
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-greeting">Hey, I'm</span>
+        <h1 class="hero-name">Aarush I. Malik</h1>
+        <p class="hero-typed-line">I'm <span class="typed" data-typed-items="a Computer Science Student | an Incoming AI &amp; Data Engineering Summer Analyst at Deloitte | an ex-Data Science Intern at Collins Aerospace | a Student Pilot"></span></p>
+        <div class="hero-socials">
+          <a href="https://www.linkedin.com/in/aarushmalik" title="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+          <a href="https://github.com/aarush-malik" title="GitHub"><i class="bx bxl-github"></i></a>
+          <a href="mailto:aimalik@scu.edu" title="Email"><i class="bx bx-envelope"></i></a>
         </div>
       </div>
     </div>

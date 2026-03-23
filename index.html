@@ -272,6 +272,7 @@ ul li {
   <!-- ======= Mobile nav toggle button ======= -->
   <!-- <button type="button" class="mobile-nav-toggle d-xl-none"><i class="bi bi-list mobile-nav-toggle"></i></button> -->
   <i class="bi bi-list mobile-nav-toggle d-lg-none"></i>
+  <div id="scroll-progress" aria-hidden="true"></div>
   <!-- ======= Header ======= -->
   <header id="header" class="d-flex flex-column justify-content-center">
     <nav id="navbar" class="navbar nav-menu">
@@ -291,7 +292,16 @@ ul li {
       <div class="hero-card">
         <div class="hero-card-inner">
           <h1>Aarush I. Malik</h1>
-            <p>I'm <span class="typed" data-typed-items="a Computer Science Student | an Incoming AI &amp; Data Engineering Summer Analyst at Deloitte | an ex-Data Science Intern at Collins Aerospace | a Student Pilot"></span></p>  
+            <p>I'm <span class="typed" data-typed-items="a Computer Science Student | an Incoming AI &amp; Data Engineering Summer Analyst at Deloitte | an ex-Data Science Intern at Collins Aerospace | a Student Pilot"></span></p>
+          <div class="hero-cta">
+            <a href="#portfolio" class="btn-hero primary scrollto"><i class="bx bx-rocket"></i> View Projects</a>
+            <a href="#contact" class="btn-hero scrollto"><i class="bx bx-envelope"></i> Let's Connect</a>
+          </div>
+          <div class="hero-chips" aria-label="Highlighted achievements">
+            <span class="hero-chip">Incoming Deloitte Summer Analyst</span>
+            <span class="hero-chip">JMM 2026 Presenter</span>
+            <span class="hero-chip">3.78 GPA @ SCU</span>
+          </div>
           <div class="social-links">
             <a href="https://www.linkedin.com/in/aarushmalik" class="linkedin"><i class="bx bxl-linkedin"></i></a>
             <a href="https://github.com/aarush-malik" class="github"><i class="bx bxl-github"></i></a>
@@ -311,7 +321,30 @@ ul li {
       <div class="container" data-aos="fade-up">
         <div class="section-title">
           <h2>About</h2>
-          <p>Hello! I'm Aarush, a junior at Santa Clara University pursuing a B.S. in Computer Science (with a Data Science Emphasis), a B.A. in Religious Studies, and a minor in Mathematics. I am passionate about addressing real-world issues with technology (especially AI!) and hope to make a positive impact with all of my work. With a strong foundation in both theoretical and practical aspects of computer science, I am constantly seeking opportunities to apply my knowledge and skills. Welcome to my portfolio!</p>
+        </div>
+        <div class="row g-4 align-items-stretch about-grid">
+          <div class="col-lg-4">
+            <div class="about-identity-card">
+              <div class="about-avatar">
+                <span>AIM</span>
+              </div>
+              <h3>Builder. Researcher. Leader.</h3>
+              <ul>
+                <li>Santa Clara University, Computer Science + Data Science</li>
+                <li>Mathematics Minor</li>
+                <li>Passionate about AI for real-world impact</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="about-story-card">
+              <p>Hello! I'm Aarush, a junior at Santa Clara University pursuing a B.S. in Computer Science (with a Data Science Emphasis), a B.A. in Religious Studies, and a minor in Mathematics. I am passionate about addressing real-world issues with technology (especially AI!) and hope to make a positive impact with all of my work. With a strong foundation in both theoretical and practical aspects of computer science, I am constantly seeking opportunities to apply my knowledge and skills.</p>
+              <div class="about-now">
+                <h4>Currently</h4>
+                <p>Preparing for my AI &amp; Data Engineering Summer Analyst role at Deloitte while building projects across AI, data systems, and product-minded engineering.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 </section>
@@ -441,57 +474,41 @@ ul li {
         <div class="section-title">
           <h2>Skills</h2>
         </div>
-        <div class="row skills-content">
-          <div class="col-lg-6">
-            <div class="progress">
-              <span class="skill">HTML <i class="val">95%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">CSS <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">JavaScript <i class="val">75%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">Time Management <i class="val">100%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
+        <div class="skills-chip-grid">
+          <div class="skills-chip-card">
+            <h3>AI / Data</h3>
+            <div class="chip-list">
+              <span class="skill-chip">Python</span>
+              <span class="skill-chip">XAI Pipelines</span>
+              <span class="skill-chip">Reinforcement Learning</span>
+              <span class="skill-chip">AWS Bedrock</span>
             </div>
           </div>
-          <div class="col-lg-6">
-            <div class="progress">
-              <span class="skill">Python <i class="val">95%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
+          <div class="skills-chip-card">
+            <h3>Software Engineering</h3>
+            <div class="chip-list">
+              <span class="skill-chip">Flask APIs</span>
+              <span class="skill-chip">Docker</span>
+              <span class="skill-chip">RESTful Architecture</span>
+              <span class="skill-chip">C/C++</span>
             </div>
-            <div class="progress">
-              <span class="skill">C/C++ <i class="val">75%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
+          </div>
+          <div class="skills-chip-card">
+            <h3>Product & Leadership</h3>
+            <div class="chip-list">
+              <span class="skill-chip">Mentorship</span>
+              <span class="skill-chip">Program Leadership</span>
+              <span class="skill-chip">Cross-functional Collaboration</span>
+              <span class="skill-chip">Public Speaking</span>
             </div>
-            <div class="progress">
-              <span class="skill">Verilog (VHDL) <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">Adaptability & Willingness to Learn <i class="val">100%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
+          </div>
+          <div class="skills-chip-card">
+            <h3>Proof</h3>
+            <div class="chip-list">
+              <span class="skill-chip proof-chip">Cleared $355K translation backlog</span>
+              <span class="skill-chip proof-chip">~95% manual workload reduction</span>
+              <span class="skill-chip proof-chip">Mentored 250 students</span>
+              <span class="skill-chip proof-chip">Presented work at JMM 2026</span>
             </div>
           </div>
         </div>
@@ -606,22 +623,26 @@ ul li {
     <div class="section-title">
       <h2>Portfolio</h2>
     </div>
-    <!-- <div align="center">
-      <div class="row">
-        <div class="col-lg-12 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
-          <ul id="portfolio-flters">
-            <li data-filter="*" class="filter-active">All</li>
-          </ul>
-        </div> 
-      </div> -->
-    <div align="center">
-      <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="200">
+    <div class="featured-project" data-aos="fade-up" data-aos-delay="120">
+      <div>
+        <span class="featured-label">Featured Project</span>
+        <h3>ApplyTo.jobs — AI-powered job matching platform</h3>
+        <p>A clean, high-speed platform experience focused on helping users discover and pursue relevant opportunities faster with clear UX and actionable next steps.</p>
+        <div class="featured-meta">
+          <span>Web Platform</span>
+          <span>Product + Engineering</span>
+          <span>Real-world Users</span>
+        </div>
+      </div>
+      <a href="https://applyto.jobs" target="_blank" class="btn-hero primary">Open Project <i class="bx bx-link-external"></i></a>
+    </div>
+    <div class="row justify-content-center g-4 portfolio-grid" data-aos="fade-up" data-aos-delay="200">
         <div class="col-lg-4 col-md-6 d-flex justify-content-center">
           <div class="portfolio-wrap">
             <img src="assets/img/applyto-jobs.jpg" class="img-fluid" alt="ApplyTo.jobs">
             <div class="portfolio-info">
               <h4>ApplyTo.jobs</h4>
-              <p>Web Development</p>
+              <p>Web Development · Product Design</p>
               <div class="portfolio-links">
                 <a href="https://applyto.jobs" class="portfolio-details-lightbox" data-glightbox="type: external" title="Project Details"><i class="bx bx-plus"></i></a>
                 <a href="https://applyto.jobs" target="_blank" title="Project Details"><i class="bx bx-link"></i></a>
@@ -634,7 +655,7 @@ ul li {
             <img src="assets/img/cometDashboard.jpg" class="img-fluid" alt="Comet Dashboard">
             <div class="portfolio-info">
               <h4>Comet Dashboard</h4>
-              <p>Product Design</p>
+              <p>Product Design · UI/UX</p>
               <div class="portfolio-links">
                 <a href="https://applywithcomet.com/" class="portfolio-details-lightbox" data-glightbox="type: external" title="Project Details"><i class="bx bx-plus"></i></a>
                 <a href="https://applywithcomet.com/" target="_blank" title="Project Details"><i class="bx bx-link"></i></a>
@@ -642,10 +663,34 @@ ul li {
             </div>
           </div>
         </div>
+        <div class="col-lg-4 col-md-6 d-flex justify-content-center">
+          <div class="portfolio-wrap">
+            <img src="assets/img/scuCampus.jpeg" class="img-fluid" alt="Research and modeling projects">
+            <div class="portfolio-info">
+              <h4>Research Modeling</h4>
+              <p>Mathematical Modeling · Research</p>
+              <div class="portfolio-links">
+                <a href="#resume" class="scrollto" title="See Experience"><i class="bx bx-plus"></i></a>
+                <a href="#resume" class="scrollto" title="See Experience"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 d-flex justify-content-center">
+          <div class="portfolio-wrap">
+            <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="AI engineering work">
+            <div class="portfolio-info">
+              <h4>AI Engineering Workflows</h4>
+              <p>AI Systems · Automation</p>
+              <div class="portfolio-links">
+                <a href="#resume" class="scrollto" title="See Experience"><i class="bx bx-plus"></i></a>
+                <a href="#resume" class="scrollto" title="See Experience"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  </div>
 </section>
 <!-- End Portfolio Section -->
     

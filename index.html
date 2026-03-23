@@ -11,6 +11,7 @@
   <!--<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">-->
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&display=swap" rel="stylesheet">
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -90,34 +91,21 @@
 /* Hero content */
 .hero-content { max-width: 820px; }
 
-/* "Hey, I'm" greeting */
-.hero-greeting {
-  font-size: 1.1rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #a78bfa;
-  opacity: 0;
-  animation: heroFadeUp 0.7s ease 0.25s forwards;
-  margin-bottom: 0.4rem;
-  display: block;
-}
-body:not(.dark-mode) .hero-greeting { color: #4f46e5; }
-
 /* Name */
 #hero h1.hero-name {
-  font-size: clamp(3.2rem, 8vw, 6.2rem);
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(3.5rem, 9vw, 7rem);
   font-weight: 800;
-  line-height: 1.05;
-  letter-spacing: -2px;
-  margin: 0.1em 0 0.35em;
+  line-height: 1.0;
+  letter-spacing: -3px;
+  margin: 0 0 0.35em;
   background: linear-gradient(130deg, #60a5fa 0%, #a78bfa 45%, #34d399 100%);
   background-size: 250% 250%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   opacity: 0;
-  animation: heroFadeUp 0.8s ease 0.5s forwards, shimmer 7s ease-in-out 1.3s infinite;
+  animation: heroFadeUp 0.8s ease 0.3s forwards, shimmer 7s ease-in-out 1.1s infinite;
 }
 @keyframes shimmer {
   0%, 100% { background-position: 0% 50%; }
@@ -129,7 +117,7 @@ body:not(.dark-mode) .hero-greeting { color: #4f46e5; }
   font-size: clamp(1.15rem, 2.4vw, 1.6rem);
   margin-bottom: 2.2rem;
   opacity: 0;
-  animation: heroFadeUp 0.8s ease 0.9s forwards;
+  animation: heroFadeUp 0.8s ease 0.7s forwards;
 }
 .dark-mode #hero p.hero-typed-line { color: rgba(226,232,240,0.82); }
 body:not(.dark-mode) #hero p.hero-typed-line { color: #334155; }
@@ -145,7 +133,7 @@ body:not(.dark-mode) #hero .typed { color: #4f46e5; }
   display: flex;
   gap: 14px;
   opacity: 0;
-  animation: heroFadeUp 0.8s ease 1.2s forwards;
+  animation: heroFadeUp 0.8s ease 1.0s forwards;
 }
 .hero-socials a {
   width: 50px; height: 50px;
@@ -205,6 +193,8 @@ body:not(.dark-mode) .scroll-indicator { color: rgba(71,85,105,0.65); }
 }
 
 .section-title h2 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
   position: relative;
   display: inline-block;
   padding-bottom: 10px;
@@ -217,8 +207,99 @@ body:not(.dark-mode) .scroll-indicator { color: rgba(71,85,105,0.65); }
   bottom: 2px;
   width: 58%;
   height: 3px;
-  background: rgba(44,97,177,0.85);
+  background: linear-gradient(90deg, #60a5fa, #a78bfa);
   border-radius: 999px;
+}
+
+/* ===== COMBINED ABOUT SECTION ===== */
+.about-combined { padding: 70px 0; }
+
+.about-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.about-bio p {
+  font-size: 1.08rem;
+  line-height: 1.85;
+  margin-bottom: 24px;
+}
+.dark-mode .about-bio p { color: rgba(226,232,240,0.78); }
+body:not(.dark-mode) .about-bio p { color: #475569; }
+
+.about-pill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.about-pill-tags span {
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+.dark-mode .about-pill-tags span {
+  background: rgba(99,102,241,0.12);
+  border: 1px solid rgba(99,102,241,0.25);
+  color: #a5b4fc;
+}
+body:not(.dark-mode) .about-pill-tags span {
+  background: rgba(79,70,229,0.07);
+  border: 1px solid rgba(79,70,229,0.18);
+  color: #4f46e5;
+}
+
+.about-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.stat-card {
+  padding: 28px 20px;
+  border-radius: 18px;
+  text-align: center;
+  transition: transform 0.22s ease;
+}
+.stat-card:hover { transform: translateY(-4px); }
+
+.dark-mode .stat-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+body:not(.dark-mode) .stat-card {
+  background: rgba(79,70,229,0.04);
+  border: 1px solid rgba(79,70,229,0.1);
+}
+
+.stat-num {
+  display: block;
+  font-family: 'Syne', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+}
+.dark-mode .stat-label { color: rgba(148,163,184,0.7); }
+body:not(.dark-mode) .stat-label { color: rgba(71,85,105,0.75); }
+
+@media (max-width: 768px) {
+  .about-inner { grid-template-columns: 1fr; gap: 40px; }
 }
 
 .section-title p {
@@ -350,7 +431,6 @@ ul li {
     <div class="hero-orb hero-orb-3"></div>
     <div class="container">
       <div class="hero-content">
-        <span class="hero-greeting">Hey, I'm</span>
         <h1 class="hero-name">Aarush I. Malik</h1>
         <p class="hero-typed-line">I'm <span class="typed" data-typed-items="a Computer Science Student | an Incoming AI &amp; Data Engineering Summer Analyst at Deloitte | an ex-Data Science Intern at Collins Aerospace | a Student Pilot"></span></p>
         <div class="hero-socials">
@@ -368,55 +448,45 @@ ul li {
 <!-- End Hero -->
   
   <main id="main">
-<!-- ======= About Section (Education) ======= -->
-
-<section id="aboutMe" class="aboutMe">
-      <div class="container" data-aos="fade-up">
+<!-- ======= About Section ======= -->
+<section id="aboutMe" class="about-combined">
+  <div class="container" data-aos="fade-up">
+    <div class="about-inner">
+      <div class="about-bio">
         <div class="section-title">
-          <h2>About</h2>
-          <p>Hello! I'm Aarush, a junior at Santa Clara University pursuing a B.S. in Computer Science (with a Data Science Emphasis), a B.A. in Religious Studies, and a minor in Mathematics. I am passionate about addressing real-world issues with technology (especially AI!) and hope to make a positive impact with all of my work. With a strong foundation in both theoretical and practical aspects of computer science, I am constantly seeking opportunities to apply my knowledge and skills. Welcome to my portfolio!</p>
+          <h2>About Me</h2>
+        </div>
+        <p>I'm a junior at Santa Clara University studying Computer Science, Religious Studies, and Mathematics. I build things with AI and data, care deeply about making tech meaningful — and fly planes when I'm not at a keyboard.</p>
+        <div class="about-pill-tags">
+          <span>AI / ML</span>
+          <span>Data Engineering</span>
+          <span>Python</span>
+          <span>AWS</span>
+          <span>C++</span>
+          <span>Student Pilot</span>
         </div>
       </div>
-</section>
-
-<!-- ======= Facts Section ======= -->
-<section id="facts" class="facts">
-      <div class="container" data-aos="fade-up">
-        <div class="section-title">
-          <h2>Numbers at a Glance</h2>
+      <div class="about-stats-grid">
+        <div class="stat-card" data-aos="zoom-in" data-aos-delay="100">
+          <span class="stat-num purecounter" data-purecounter-start="0" data-purecounter-end="6" data-purecounter-duration="2"></span>
+          <span class="stat-label">Programming<br>Languages</span>
         </div>
-        <div class="row">
-          <div class="col-lg-3 col-md-6">
-            <div class="count-box">
-              <i class="bi bi-emoji-smile"></i>
-              <span data-purecounter-start="0" data-purecounter-end="6" data-purecounter-duration="2" class="purecounter"></span>
-              <p>Programming Languages</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
-            <div class="count-box">
-              <i class="bi bi-journal-richtext"></i>
-              <span data-purecounter-start="0" data-purecounter-end="3" data-purecounter-duration="2" class="purecounter"></span>
-              <p>Projects</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-            <div class="count-box">
-              <i class="bi bi-headset"></i>
-              <span data-purecounter-start="0" data-purecounter-end="475" data-purecounter-duration="4" class="purecounter"></span>
-              <p>Volunteer Hours</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-            <div class="count-box">
-              <i class="bi bi-award"></i>
-              <span data-purecounter-start="0" data-purecounter-end="4" data-purecounter-duration="2" class="purecounter"></span>
-              <p>National Awards</p>
-            </div>
-          </div>
+        <div class="stat-card" data-aos="zoom-in" data-aos-delay="200">
+          <span class="stat-num purecounter" data-purecounter-start="0" data-purecounter-end="475" data-purecounter-duration="3"></span>
+          <span class="stat-label">Volunteer<br>Hours</span>
+        </div>
+        <div class="stat-card" data-aos="zoom-in" data-aos-delay="300">
+          <span class="stat-num">3.78</span>
+          <span class="stat-label">GPA at<br>SCU</span>
+        </div>
+        <div class="stat-card" data-aos="zoom-in" data-aos-delay="400">
+          <span class="stat-num purecounter" data-purecounter-start="0" data-purecounter-end="4" data-purecounter-duration="2"></span>
+          <span class="stat-label">National<br>Awards</span>
         </div>
       </div>
-</section><!-- End Facts Section -->
+    </div>
+  </div>
+</section><!-- End About Section -->
   
 <section id="education" class="education">
   <div class="container" data-aos="fade-up">

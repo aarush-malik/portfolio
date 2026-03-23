@@ -82,6 +82,20 @@
   }
 
   /**
+   * Scroll progress bar
+   */
+  let scrollProgress = select('#scroll-progress')
+  if (scrollProgress) {
+    const updateScrollProgress = () => {
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight
+      const progress = docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0
+      scrollProgress.style.width = `${Math.min(100, Math.max(0, progress))}%`
+    }
+    window.addEventListener('load', updateScrollProgress)
+    onscroll(document, updateScrollProgress)
+  }
+
+  /**
    * Mobile nav toggle
    */
   on('click', '.mobile-nav-toggle', function(e) {

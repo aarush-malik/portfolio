@@ -257,10 +257,37 @@
   });
 
   /**
-   * Initiate Pure Counter 
+   * Initiate Pure Counter
    */
   new PureCounter();
 
+  /**
+   * Dark mode toggle
+   */
+  const darkModeToggle = select('#dark-mode-toggle');
+  const darkModeIcon = select('#dark-mode-icon');
+
+  const applyTheme = (isDark) => {
+    if (isDark) {
+      document.body.classList.add('dark-mode');
+      if (darkModeIcon) darkModeIcon.className = 'bi bi-sun-fill';
+    } else {
+      document.body.classList.remove('dark-mode');
+      if (darkModeIcon) darkModeIcon.className = 'bi bi-moon-fill';
+    }
+  };
+
+  // Apply saved preference; default to dark
+  const savedTheme = localStorage.getItem('portfolioTheme');
+  applyTheme(savedTheme !== 'light');
+
+  if (darkModeToggle) {
+    darkModeToggle.addEventListener('click', () => {
+      const isDark = !document.body.classList.contains('dark-mode');
+      applyTheme(isDark);
+      localStorage.setItem('portfolioTheme', isDark ? 'dark' : 'light');
+    });
+  }
 
 })()
 

@@ -254,12 +254,12 @@ body:not(.dark-mode) .about-pill-tags span {
 
 .about-stats-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
 }
 
 .stat-card {
-  padding: 28px 20px;
+  padding: 24px 10px;
   border-radius: 18px;
   text-align: center;
   transition: transform 0.22s ease;
@@ -278,7 +278,7 @@ body:not(.dark-mode) .stat-card {
 .stat-num {
   display: block;
   font-family: 'Syne', sans-serif;
-  font-size: 2.8rem;
+  font-size: 2.3rem;
   font-weight: 800;
   line-height: 1;
   background: linear-gradient(135deg, #60a5fa, #a78bfa);
@@ -418,7 +418,7 @@ ul li {
         <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
         <li><a href="#aboutMe" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
         <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Experience</span></a></li>
-        <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
+        <!-- <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li> -->
         <!-- <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li> -->
         <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
       </ul>
@@ -456,7 +456,7 @@ ul li {
         <div class="section-title">
           <h2>About Me</h2>
         </div>
-        <p>I'm a junior at Santa Clara University studying Computer Science, Religious Studies, and Mathematics. I build things with AI and data, care deeply about making tech meaningful — and fly planes when I'm not at a keyboard.</p>
+        <p>Hi, I'm Aarush — a senior at Santa Clara University studying Computer Science, Religious Studies, and Mathematics. I like working on problems where data and software actually make a difference, and I spend a lot of my free time flying planes.</p>
       </div>
       <div class="about-stats-grid">
         <div class="stat-card" data-aos="zoom-in" data-aos-delay="100">
@@ -643,20 +643,11 @@ ul li {
         </div>
 
         <div class="resume-item">
-          <h4>Research Assistant: Wireless Intelligent Networks</h4>
-          <h5>Jun. 2025 - Present</h5>
-          <p><em>Santa Clara University | Santa Clara, CA</em></p>
+          <h4>AI &amp; Data Engineering Summer Analyst</h4>
+          <h5>Jun. 2026 - Aug. 2026</h5>
+          <p><em>Deloitte Consulting | Austin, TX</em></p>
           <ul>
-            <li>Implementing reinforcement learning to optimize user grouping and resource allocation in semantic-aware 6G NOMA networks</li>
-          </ul>
-        </div>
-
-        <div class="resume-item">
-          <h4>Research Assistant: Mathematical Modeling</h4>
-          <h5>May 2025 - Present</h5>
-          <p><em>Polymath REU (NSF-funded) | Remote</em></p>
-          <ul>
-            <li>Developing agent-based and differential equation models of C. difficile to evaluate transmission and mitigation strategies; accepted for presentation at the 2026 Joint Mathematics Meetings (JMM) Conference</li>
+            <li>Federal Healthcare, Government &amp; Public Services Division</li>
           </ul>
         </div>
 
@@ -721,54 +712,45 @@ ul li {
 </section><!-- End Resume Section -->
 
 
-  <!-- ======= Portfolio Section ======= -->
-<section id="portfolio" class="portfolio section-bg">
-  <div class="container" data-aos="fade-up">
-    <div class="section-title">
-      <h2>Portfolio</h2>
-    </div>
-    <!-- <div align="center">
-      <div class="row">
-        <div class="col-lg-12 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
-          <ul id="portfolio-flters">
-            <li data-filter="*" class="filter-active">All</li>
-          </ul>
-        </div> 
-      </div> -->
-    <div align="center">
-      <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="200">
-        <div class="col-lg-4 col-md-6 d-flex justify-content-center">
-          <div class="portfolio-wrap">
-            <img src="assets/img/applyto-jobs.jpg" class="img-fluid" alt="ApplyTo.jobs">
-            <div class="portfolio-info">
-              <h4>ApplyTo.jobs</h4>
-              <p>Web Development</p>
-              <div class="portfolio-links">
-                <a href="https://applyto.jobs" class="portfolio-details-lightbox" data-glightbox="type: external" title="Project Details"><i class="bx bx-plus"></i></a>
-                <a href="https://applyto.jobs" target="_blank" title="Project Details"><i class="bx bx-link"></i></a>
+  <!-- ======= Portfolio Section (removed) =======
+  <section id="portfolio" class="portfolio section-bg">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title">
+        <h2>Portfolio</h2>
+      </div>
+      <div align="center">
+        <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-4 col-md-6 d-flex justify-content-center">
+            <div class="portfolio-wrap">
+              <img src="assets/img/applyto-jobs.jpg" class="img-fluid" alt="ApplyTo.jobs">
+              <div class="portfolio-info">
+                <h4>ApplyTo.jobs</h4>
+                <p>Web Development</p>
+                <div class="portfolio-links">
+                  <a href="https://applyto.jobs" class="portfolio-details-lightbox" data-glightbox="type: external" title="Project Details"><i class="bx bx-plus"></i></a>
+                  <a href="https://applyto.jobs" target="_blank" title="Project Details"><i class="bx bx-link"></i></a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-lg-4 col-md-6 d-flex justify-content-center">
-          <div class="portfolio-wrap">
-            <img src="assets/img/cometDashboard.jpg" class="img-fluid" alt="Comet Dashboard">
-            <div class="portfolio-info">
-              <h4>Comet Dashboard</h4>
-              <p>Product Design</p>
-              <div class="portfolio-links">
-                <a href="https://applywithcomet.com/" class="portfolio-details-lightbox" data-glightbox="type: external" title="Project Details"><i class="bx bx-plus"></i></a>
-                <a href="https://applywithcomet.com/" target="_blank" title="Project Details"><i class="bx bx-link"></i></a>
+          <div class="col-lg-4 col-md-6 d-flex justify-content-center">
+            <div class="portfolio-wrap">
+              <img src="assets/img/cometDashboard.jpg" class="img-fluid" alt="Comet Dashboard">
+              <div class="portfolio-info">
+                <h4>Comet Dashboard</h4>
+                <p>Product Design</p>
+                <div class="portfolio-links">
+                  <a href="https://applywithcomet.com/" class="portfolio-details-lightbox" data-glightbox="type: external" title="Project Details"><i class="bx bx-plus"></i></a>
+                  <a href="https://applywithcomet.com/" target="_blank" title="Project Details"><i class="bx bx-link"></i></a>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  </div>
-</section>
-<!-- End Portfolio Section -->
+  </section>
+  End Portfolio Section -->
     
     <!-- ======= Portfolio Section ======= 
     <section id="portfolio" class="portfolio section-bg">

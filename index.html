@@ -402,6 +402,147 @@ ul li {
   .hero-socials a { width: 44px; height: 44px; }
 }
 
+/* ===== HERO RESUME BUTTON ===== */
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 2.2rem;
+  opacity: 0;
+  animation: heroFadeUp 0.8s ease 0.85s forwards;
+}
+.hero-resume-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 13px 26px;
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 0.98rem;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(130deg, #4f46e5 0%, #6d28d9 50%, #06b6d4 100%);
+  background-size: 200% 200%;
+  box-shadow: 0 10px 30px rgba(79,70,229,0.38);
+  transition: transform 0.22s cubic-bezier(.34,1.56,.64,1), box-shadow 0.22s ease, background-position 0.5s ease;
+}
+.hero-resume-btn:hover {
+  transform: translateY(-4px);
+  background-position: 100% 50%;
+  box-shadow: 0 16px 40px rgba(79,70,229,0.5);
+  color: #fff;
+}
+.hero-resume-btn i { font-size: 1.15rem; }
+
+/* ===== SKILLS PILLS ===== */
+#skills .skills-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+.skill-group h4 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 1.02rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.skill-group h4 i {
+  font-size: 1.25rem;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.dark-mode .skill-group h4 { color: #e2e8f0; }
+body:not(.dark-mode) .skill-group h4 { color: #1e293b; }
+
+.skill-chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.skill-chips span {
+  padding: 8px 16px;
+  border-radius: 11px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  cursor: default;
+  transition: transform 0.2s cubic-bezier(.34,1.56,.64,1), box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.dark-mode .skill-chips span {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #cbd5e1;
+}
+body:not(.dark-mode) .skill-chips span {
+  background: rgba(79,70,229,0.05);
+  border: 1px solid rgba(79,70,229,0.14);
+  color: #4338ca;
+}
+.skill-chips span:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(79,70,229,0.25);
+}
+.dark-mode .skill-chips span:hover { border-color: rgba(167,139,250,0.55); }
+body:not(.dark-mode) .skill-chips span:hover { border-color: rgba(79,70,229,0.5); }
+
+/* ===== EXPERIENCE TIMELINE ===== */
+#resume .resume-item {
+  position: relative;
+  padding: 18px 22px 18px 26px;
+  margin-bottom: 18px;
+  border-radius: 16px;
+  border-left: 3px solid transparent;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+#resume .resume-item::before { display: none; }
+.dark-mode #resume .resume-item {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-left: 3px solid rgba(99,102,241,0.55);
+}
+body:not(.dark-mode) #resume .resume-item {
+  background: rgba(79,70,229,0.03);
+  border: 1px solid rgba(79,70,229,0.09);
+  border-left: 3px solid rgba(79,70,229,0.55);
+}
+#resume .resume-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 12px 30px rgba(79,70,229,0.18);
+  border-left-color: #06b6d4;
+}
+#resume .resume-item h4 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1.12rem;
+  margin-bottom: 4px;
+}
+#resume .resume-item h5 {
+  display: inline-block;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 3px 11px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+}
+.dark-mode #resume .resume-item h5 {
+  background: rgba(99,102,241,0.16);
+  color: #a5b4fc;
+}
+body:not(.dark-mode) #resume .resume-item h5 {
+  background: rgba(79,70,229,0.1);
+  color: #4f46e5;
+}
+#resume .resume-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+}
+
 </style>
 
 </head>
@@ -433,10 +574,13 @@ ul li {
       <div class="hero-content">
         <h1 class="hero-name">Aarush I. Malik</h1>
         <p class="hero-typed-line">I'm <span class="typed" data-typed-items="a Computer Science Student | an Incoming AI &amp; Data Engineering Summer Analyst at Deloitte | an ex-Data Science Intern at Collins Aerospace | a Student Pilot"></span></p>
-        <div class="hero-socials">
-          <a href="https://www.linkedin.com/in/aarushmalik" title="LinkedIn"><i class="bx bxl-linkedin"></i></a>
-          <a href="https://github.com/aarush-malik" title="GitHub"><i class="bx bxl-github"></i></a>
-          <a href="mailto:aimalik@scu.edu" title="Email"><i class="bx bx-envelope"></i></a>
+        <div class="hero-actions">
+          <a href="assets/Aarush_Malik_Resume.pdf" target="_blank" class="hero-resume-btn"><i class="bx bxs-file-pdf"></i> Resume</a>
+          <div class="hero-socials">
+            <a href="https://www.linkedin.com/in/aarushmalik" title="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+            <a href="https://github.com/aarush-malik" title="GitHub"><i class="bx bxl-github"></i></a>
+            <a href="mailto:aimalik@scu.edu" title="Email"><i class="bx bx-envelope"></i></a>
+          </div>
         </div>
       </div>
     </div>
@@ -562,57 +706,40 @@ ul li {
         <div class="section-title">
           <h2>Skills</h2>
         </div>
-        <div class="row skills-content">
-          <div class="col-lg-6">
-            <div class="progress">
-              <span class="skill">HTML <i class="val">95%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">CSS <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">JavaScript <i class="val">75%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">Time Management <i class="val">100%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
+        <div class="skills-groups">
+          <div class="skill-group" data-aos="fade-up" data-aos-delay="100">
+            <h4><i class="bx bx-code-alt"></i> Languages</h4>
+            <div class="skill-chips">
+              <span>Python</span>
+              <span>C / C++</span>
+              <span>JavaScript</span>
+              <span>SQL</span>
+              <span>Verilog (VHDL)</span>
+              <span>Assembly</span>
+              <span>HTML / CSS</span>
             </div>
           </div>
-          <div class="col-lg-6">
-            <div class="progress">
-              <span class="skill">Python <i class="val">95%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
+          <div class="skill-group" data-aos="fade-up" data-aos-delay="200">
+            <h4><i class="bx bx-brain"></i> AI &amp; Data</h4>
+            <div class="skill-chips">
+              <span>LLMs</span>
+              <span>AWS Bedrock</span>
+              <span>Explainable AI</span>
+              <span>Model Context Protocol</span>
+              <span>Reinforcement Learning</span>
+              <span>Data Science</span>
+              <span>Docling</span>
             </div>
-            <div class="progress">
-              <span class="skill">C/C++ <i class="val">75%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">Verilog (VHDL) <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">Adaptability & Willingness to Learn <i class="val">100%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
+          </div>
+          <div class="skill-group" data-aos="fade-up" data-aos-delay="300">
+            <h4><i class="bx bx-wrench"></i> Tools &amp; Platforms</h4>
+            <div class="skill-chips">
+              <span>AWS</span>
+              <span>Docker</span>
+              <span>Flask</span>
+              <span>REST APIs</span>
+              <span>Git</span>
+              <span>Linux</span>
             </div>
           </div>
         </div>
@@ -631,7 +758,7 @@ ul li {
       <div class="col-lg-6">
         <h3 class="resume-title">Professional Experience</h3>
 
-        <div class="resume-item">
+        <div class="resume-item" data-aos="fade-up" data-aos-delay="100">
           <h4>AI &amp; Data Engineering Summer Analyst</h4>
           <h5>Jun. 2026 - Aug. 2026</h5>
           <p><em>Deloitte Consulting | Austin, TX</em></p>
@@ -640,7 +767,7 @@ ul li {
           </ul>
         </div>
 
-        <div class="resume-item">
+        <div class="resume-item" data-aos="fade-up" data-aos-delay="200">
           <h4>Artificial Intelligence Algorithms Intern</h4>
           <h5>Jun. 2025 - Aug. 2025</h5>
           <p><em>RTX/Collins Aerospace | Remote</em></p>
@@ -651,7 +778,7 @@ ul li {
           </ul>
         </div>
 
-        <div class="resume-item">
+        <div class="resume-item" data-aos="fade-up" data-aos-delay="300">
           <h4>Software Engineering Intern</h4>
           <h5>Jun. 2024 - Aug. 2024</h5>
           <p><em>SecoMind AI | San Jose, CA</em></p>
@@ -668,7 +795,7 @@ ul li {
 <div class="col-lg-6">
   <h3 class="resume-title">Leadership & Teaching</h3>
 
-  <div class="resume-item">
+  <div class="resume-item" data-aos="fade-up" data-aos-delay="100">
     <h4>Assistant Resident Director</h4>
     <h5>Aug. 2024 - Present</h5>
     <p><em>Santa Clara University | Santa Clara, CA</em></p>
@@ -679,7 +806,7 @@ ul li {
     </ul>
   </div>
 
-  <div class="resume-item">
+  <div class="resume-item" data-aos="fade-up" data-aos-delay="200">
     <h4>Girls Who Code Summer Advisor</h4>
     <h5>May 2024 - Present</h5>
     <p><em>Girls Who Code | Remote</em></p>
@@ -688,7 +815,7 @@ ul li {
     </ul>
   </div>
 
-  <div class="resume-item">
+  <div class="resume-item" data-aos="fade-up" data-aos-delay="300">
     <h4>Mathematics Grader</h4>
     <h5>Jan. 2025 - Present</h5>
     <p><em>Santa Clara University | Santa Clara, CA</em></p>
@@ -697,7 +824,7 @@ ul li {
     </ul>
   </div>
 
-  <div class="resume-item">
+  <div class="resume-item" data-aos="fade-up" data-aos-delay="400">
     <h4>Product Design Fellow</h4>
     <h5>Oct. 2023 - Jun. 2024</h5>
     <p><em>Comet | Remote</em></p>
